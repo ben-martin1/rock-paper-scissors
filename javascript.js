@@ -4,6 +4,7 @@ const scissors = document.querySelector('#scissors');
 
 const playerScoreDiv = document.querySelector('.playerscore');
 const computerScoreDiv = document.querySelector('.computerscore');
+const winnerDiv = document.querySelector('.winner');
 
 let computerScore=0;
 let playerScore=0;
@@ -55,4 +56,13 @@ function updateScore(winner)
 {
     if(winner == "player") playerScore++; playerScoreDiv.textContent="Your score: "+playerScore;
     if(winner == "computer") computerScore++; computerScoreDiv.textContent="Computer score: "+computerScore;
+
+    if(playerScore==5)
+    {
+        winnerDiv.textContent = "The winner is.... YOU!!";
+    }
+    if(computerScore==5)
+    {
+        winnerDiv.textContent = "The winner is... the computer...";
+    }
 }
